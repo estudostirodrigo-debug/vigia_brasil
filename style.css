@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height:100vh;
+    margin:0;
+    background: linear-gradient(
+        135deg,
+        #009739,
+        #ffdf00,
+        #002776
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    flex: 1;
+    width:100%;
+    max-width:1200px;
+    padding:20px;
+}
+
+.hero{
+   .hero{
+    width: 700px;
+    max-width: 90%;
+
+    background: rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+}
+}
+
+.hero h1{
+    font-size:4rem;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.cadastro{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+    max-width:500px;
+
+    margin:auto;
+}
+
+.cadastro input{
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:1rem;
+}
+
+.cadastro button{
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#002776;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.cadastro button:hover{
+    transform:translateY(-3px);
+     box-shadow:0 10px 20px rgba(0,0,0,.3);
+} 
+
+footer{
+    text-align: center;
+
+   position:fixed;
+    bottom:0;
+    width:100%;
+
+}
+#mensagem{
+    margin-top:20px;
+    padding:15px;
+
+    border-radius:12px;
+
+    display:none;
+
+    background:rgba(0,151,57,.25);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    color:white;
+
+    text-align:center;
+
+    font-weight:600;
+}
