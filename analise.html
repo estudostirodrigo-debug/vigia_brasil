@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigia Brasil - Análise</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="hero">
+
+            <h1>🇧🇷 Vigia Brasil</h1>
+
+            <h2 id="boasVindas"></h2>
+            
+            <p>
+                Análise Inteligente de Contratos Públicos
+            </p>
+            
+            <p>Estado</p>
+           
+            <select id="estado">
+               
+                <option value="SC">Santa Catarina</option>
+            
+            </select>
+
+            <p>Município</p>
+            
+            <select id="municipio">
+            
+                <option value="">Selecione seu município</option>
+                
+                <option value="Florianópolis">Florianópolis</option>
+            
+                <option value="Garopaba">Garopaba</option>
+            
+                <option value="Imaruí">Imaruí</option>
+            
+                <option value="Imbituba">Imbituba</option>
+            
+                <option value="Laguna">Laguna</option>
+            
+                <option value="Palhoça">Palhoça</option>
+            
+                <option value="Paulo Lopes">Paulo Lopes</option>
+            
+            </select>
+            
+            <p>Termo de Pesquisa</p>
+            
+            <input type="text" id="termo" placeholder="Asfalto, Medicamentos, Merenda Escola...">
+            
+            <button id="btnPesquisar">
+                🔍 Pesquisar
+            </button>
+            
+            <div id="resultado"></div>
+            
+            </div>
+
+    </div>
+
+    <script src="analise.js"></script>
+</body>
+
+</html>

@@ -7,49 +7,94 @@
 body{
     height:100vh;
     margin:0;
+
     background: linear-gradient(
-        135deg,
+        -45deg,
         #009739,
         #ffdf00,
-        #002776
+        #002776,
+        #009739
     );
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-size:400% 400%;
+
+    animation: gradienteBrasil 15s ease infinite;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+@keyframes gradienteBrasil {
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
 }
 
 .container{
-    flex: 1;
     width:100%;
     max-width:1200px;
     padding:20px;
 }
 
 .hero{
-   .hero{
-    width: 700px;
-    max-width: 90%;
+   
+    width: 100%;
+    max-width: 95%;
 
     background: rgba(255,255,255,0.15);
 
     backdrop-filter: blur(15px);
+    
     -webkit-backdrop-filter: blur(15px);
 
     border: 1px solid rgba(255,255,255,0.2);
 
     box-shadow: 0 20px 50px rgba(0,0,0,.25);
 }
-}
+
 
 .hero h1{
+   
     font-size:4rem;
+    
     margin-bottom:15px;
 }
 
 .hero p{
-    font-size:1.2rem;
-    margin-bottom:30px;
+    margin-top:15px;
+    
+    margin-bottom:8px;
+
+    text-align:left;
+
+    font-weight: 600px;
+
+    font-size:1rem;
+}
+
+.hero select,
+.hero input{
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
+    margin-bottom:15px;
 }
 
 .cadastro{
@@ -120,4 +165,48 @@ footer{
     text-align:center;
 
     font-weight:600;
+}
+
+.cardResultado{
+    margin-top:20px;
+    padding:20px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    text-align:left;
+}
+
+.status-amarelo{
+    font-weight:bold;
+}
+#btnPesquisar{
+    width:100%;
+
+    padding:15px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#009739;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#btnPesquisar:hover{
+    transform:translateY(-3px);
 }

@@ -24,11 +24,9 @@ formulario.addEventListener("submit", function(event){
         return;
     }
 
-    mensagem.style.display = "block";
-
-    mensagem.innerHTML = `
-        ✅ Bem-vindo ao Vigia Brasil, ${nome}!<br>
-        Seu acesso foi registrado com sucesso.
-    `;
+   // Salva o usuário
     localStorage.setItem("usuario", nome);
+
+    // Redireciona para a página de análise
+    window.location.href = "analise.html";
 });
