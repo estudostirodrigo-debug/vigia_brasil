@@ -1,85 +1,120 @@
-// Recupera o nome salvo no cadastro
+// ========================================
+// RECUPERA O USUÁRIO
+// ========================================
 
 const usuario = localStorage.getItem("usuario");
+const boasVindas = document.getElementById("boasVindas");
 
-const boasVindas =
-document.getElementById("boasVindas");
-
-if(usuario){
-    boasVindas.innerText =
-    `Olá, ${usuario} 👋`;
+if (usuario) {
+    boasVindas.innerText = `Olá, ${usuario} 👋`;
 }
 
-// Captura o botão pesquisar
+// ========================================
+// BASE DE CONTRATOS (SIMULAÇÃO)
+// ========================================
 
-const btn =
-document.getElementById("btnPesquisar");
+const contratos = [
+    {
+        municipio: "Garopaba",
+        objeto: "Pavimentação Asfáltica",
+        empresa: "Construtora Sul LTDA",
+        valor: "R$ 1.250.000,00",
+        status: "🟡 Em análise"
+    },
+    {
+        municipio: "Paulo Lopes",
+        objeto: "Merenda Escolar",
+        empresa: "Alimentos Costa Sul",
+        valor: "R$ 185.000,00",
+        status: "🟢 Regular"
+    },
+    {
+        municipio: "Imbituba",
+        objeto: "Aquisição de Medicamentos",
+        empresa: "Farmabrasil",
+        valor: "R$ 320.000,00",
+        status: "🟢 Regular"
+    },
+    {
+        municipio: "Palhoça",
+        objeto: "Implantação de Rede de Água",
+        empresa: "Saneamento Sul",
+        valor: "R$ 2.500.000,00",
+        status: "🟡 Em análise"
+    }
+];
 
-// Quando clicar no botão
+// ========================================
+// TESTE DA BASE DE DADOS
+// ========================================
 
-btn.addEventListener("click", function(){
+console.log(contratos);
+
+// ========================================
+// BOTÃO PESQUISAR
+// ========================================
+
+const btnPesquisar = document.getElementById("btnPesquisar");
+
+btnPesquisar.addEventListener("click", function () {
 
     // Captura os valores dos campos
 
-    const estado =
-    document.getElementById("estado").value;
-
-    const municipio =
-    document.getElementById("municipio").value;
-
-    const termo =
-    document.getElementById("termo").value;
+    const estado = document.getElementById("estado").value;
+    const municipio = document.getElementById("municipio").value;
+    const termo = document.getElementById("termo").value;
 
     // Área onde aparecerá o resultado
 
-    const resultado =
-    document.getElementById("resultado");
+    const resultado = document.getElementById("resultado");
 
-    // Validação simples
+    // Validação
 
-    if(municipio === "" || termo === ""){
+    if (municipio === "" || termo === "") {
 
         resultado.innerHTML = `
             <div class="cardResultado">
-
-                <p>
-                    ⚠️ Selecione um município e digite um termo de pesquisa.
-                </p>
-
+                <p>⚠️ Selecione um município e digite um termo de pesquisa.</p>
             </div>
         `;
 
         return;
     }
 
-    // Exibe o resultado
+    // Limpa resultados anteriores
 
-    resultado.innerHTML = `
-        <div class="cardResultado">
+    resultado.innerHTML = "";
 
-            <h3>📊 Resultado da Pesquisa</h3>
+    // Percorre a lista de contratos
 
-            <p>
-                <strong>Estado:</strong>
-                ${estado}
-            </p>
+    contratos.forEach(function (contrato) {
 
-            <p>
-                <strong>Município:</strong>
-                ${municipio}
-            </p>
+        console.log(contrato);
 
-            <p>
-                <strong>Termo:</strong>
-                ${termo}
-            </p>
+        if (
+            contrato.municipio === municipio &&
+            contrato.objeto.includes(termo)
+        ) {
 
-            <br>
+            resultado.innerHTML = `
+                <div class="cardResultado">
 
-            <p>
-                🔍 Pesquisa realizada com sucesso.
-            </p>
+                    <h3>📊 Contrato Encontrado</h3>
 
-        </div>
-    `;
+                    <p><strong>Município:</strong> ${contrato.municipio}</p>
+
+                    <p><strong>Objeto:</strong> ${contrato.objeto}</p>
+
+                    <p><strong>Empresa:</strong> ${contrato.empresa}</p>
+
+                    <p><strong>Valor:</strong> ${contrato.valor}</p>
+
+                    <p><strong>Status:</strong> ${contrato.status}</p>
+
+                </div>
+            `;
+        }
+
+    });
+
 });
