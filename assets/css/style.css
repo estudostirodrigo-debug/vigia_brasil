@@ -1,13 +1,27 @@
-*{
+/* ========================================
+   RESET GERAL
+======================================== */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-    height:100vh;
-    margin:0;
 
+
+/* ========================================
+   CORPO DA PÁGINA
+======================================== */
+
+body {
+    /* Permite que a página cresça caso
+       o conteúdo ultrapasse a tela */
+    min-height: 100vh;
+
+    margin: 0;
+
+    /* Gradiente com as cores do Brasil */
     background: linear-gradient(
         -45deg,
         #009739,
@@ -16,197 +30,341 @@ body{
         #009739
     );
 
-    background-size:400% 400%;
+    /* Aumenta o tamanho do gradiente
+       para permitir a animação */
+    background-size: 400% 400%;
 
+    /* Executa a animação continuamente */
     animation: gradienteBrasil 15s ease infinite;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    /* Centraliza o conteúdo principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Evita que o conteúdo encoste
+       nas bordas da tela */
+    padding: 20px 0;
 }
+
+
+/* ========================================
+   ANIMAÇÃO DO FUNDO
+======================================== */
 
 @keyframes gradienteBrasil {
 
-    0%{
-        background-position:0% 50%;
+    0% {
+        background-position: 0% 50%;
     }
 
-    50%{
-        background-position:100% 50%;
+    50% {
+        background-position: 100% 50%;
     }
 
-    100%{
-        background-position:0% 50%;
+    100% {
+        background-position: 0% 50%;
     }
 }
 
-.container{
-    width:100%;
-    max-width:1200px;
-    padding:20px;
+
+/* ========================================
+   CONTAINER PRINCIPAL
+======================================== */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+
+    padding: 20px;
+
+    /* Centraliza o container */
+    margin: 0 auto;
 }
 
-.hero{
-   
+
+/* ========================================
+   HERO / ÁREA PRINCIPAL
+======================================== */
+
+.hero {
     width: 100%;
     max-width: 95%;
 
-    background: rgba(255,255,255,0.15);
+    /* Centraliza o Hero */
+    margin: 0 auto;
+
+    /* Espaçamento interno */
+    padding: 30px;
+
+    /* Efeito de vidro */
+    background: rgba(255, 255, 255, 0.15);
 
     backdrop-filter: blur(15px);
-    
     -webkit-backdrop-filter: blur(15px);
 
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 
-    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    border-radius: 20px;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 
-.hero h1{
-   
-    font-size:4rem;
-    
-    margin-bottom:15px;
+/* ========================================
+   TÍTULO DO HERO
+======================================== */
+
+.hero h1 {
+    font-size: 4rem;
+
+    margin-bottom: 15px;
 }
 
-.hero p{
-    margin-top:15px;
-    
-    margin-bottom:8px;
 
-    text-align:left;
+/* ========================================
+   TEXTOS DO HERO
+======================================== */
 
-    font-weight: 600px;
+.hero p {
+    margin-top: 15px;
+    margin-bottom: 8px;
 
-    font-size:1rem;
+    text-align: left;
+
+    /* CORREÇÃO:
+       font-weight não utiliza px */
+    font-weight: 600;
+
+    font-size: 1rem;
 }
+
+
+/* ========================================
+   SELECTS E INPUTS DO HERO
+======================================== */
 
 .hero select,
-.hero input{
-    width:100%;
+.hero input {
+    width: 100%;
 
-    padding:12px;
+    padding: 12px;
 
-    border:none;
+    border: none;
 
-    border-radius:10px;
+    border-radius: 10px;
 
-    font-size:1rem;
+    font-size: 1rem;
 
-    margin-bottom:15px;
+    margin-bottom: 15px;
+
+    /* Remove o contorno padrão
+       em alguns navegadores */
+    outline: none;
 }
 
-.cadastro{
-    display:flex;
-    flex-direction:column;
-    gap:15px;
 
-    max-width:500px;
+/* ========================================
+   ÁREA DE CADASTRO
+======================================== */
 
-    margin:auto;
+.cadastro {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    max-width: 500px;
+
+    margin: 0 auto;
 }
 
-.cadastro input{
-    padding:15px;
 
-    border:none;
+/* ========================================
+   INPUTS DO CADASTRO
+======================================== */
 
-    border-radius:12px;
+.cadastro input {
+    padding: 15px;
 
-    font-size:1rem;
+    border: none;
+
+    border-radius: 12px;
+
+    font-size: 1rem;
+
+    outline: none;
 }
 
-.cadastro button{
-    padding:15px;
 
-    border:none;
+/* ========================================
+   BOTÃO DO CADASTRO
+======================================== */
 
-    border-radius:12px;
+.cadastro button {
+    padding: 15px;
 
-    background:#002776;
+    border: none;
 
-    color:white;
+    border-radius: 12px;
 
-    font-weight:bold;
+    background: #002776;
 
-    cursor:pointer;
+    color: white;
 
-    transition:.3s;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-.cadastro button:hover{
-    transform:translateY(-3px);
-     box-shadow:0 10px 20px rgba(0,0,0,.3);
-} 
 
-footer{
+/* Efeito quando o mouse passa
+   sobre o botão */
+.cadastro button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ========================================
+   BOTÃO PESQUISAR
+======================================== */
+
+#btnPesquisar {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #009739;
+
+    color: white;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Efeito ao passar o mouse */
+#btnPesquisar:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   MENSAGEM
+======================================== */
+
+#mensagem {
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    display: none;
+
+    background: rgba(0, 151, 57, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    color: white;
+
     text-align: center;
 
-   position:fixed;
-    bottom:0;
-    width:100%;
-
-}
-#mensagem{
-    margin-top:20px;
-    padding:15px;
-
-    border-radius:12px;
-
-    display:none;
-
-    background:rgba(0,151,57,.25);
-
-    border:1px solid rgba(255,255,255,.3);
-
-    color:white;
-
-    text-align:center;
-
-    font-weight:600;
+    font-weight: 600;
 }
 
-.cardResultado{
-    margin-top:20px;
-    padding:20px;
 
-    border-radius:15px;
+/* ========================================
+   RESULTADO DA PESQUISA
+======================================== */
 
-    background:rgba(255,255,255,0.12);
+.cardResultado {
+    margin-top: 20px;
 
-    border:1px solid rgba(255,255,255,0.2);
+    padding: 20px;
 
-    text-align:left;
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    text-align: left;
+
+    /* Melhora a leitura sobre
+       o fundo colorido */
+    color: white;
 }
 
-.status-amarelo{
-    font-weight:bold;
-}
-#btnPesquisar{
-    width:100%;
 
-    padding:15px;
+/* ========================================
+   STATUS
+======================================== */
 
-    margin-top:15px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#009739;
-
-    color:white;
-
-    font-size:1rem;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
+.status-amarelo {
+    font-weight: bold;
 }
 
-#btnPesquisar:hover{
-    transform:translateY(-3px);
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    padding: 15px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+/* Ajustes para celulares e tablets */
+@media (max-width: 768px) {
+
+    body {
+        /* Em telas menores é melhor começar
+           o conteúdo no topo */
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .hero {
+        max-width: 100%;
+
+        padding: 20px;
+    }
+
+    .hero h1 {
+        /* Evita título gigante no celular */
+        font-size: 2.5rem;
+    }
+
 }
