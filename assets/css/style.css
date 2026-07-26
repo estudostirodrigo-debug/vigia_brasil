@@ -368,3 +368,321 @@ footer {
     }
 
 }
+
+/* ========================================
+   CABEÇALHO - HOME
+======================================== */
+
+.cabecalho {
+    /* Posiciona o cabeçalho no topo da página */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    /* Ocupa toda a largura da tela */
+    width: 100%;
+
+    /* Coloca logo e menu lado a lado */
+    display: flex;
+
+    /* Logo fica à esquerda e menu à direita */
+    justify-content: space-between;
+
+    /* Alinha verticalmente os elementos */
+    align-items: center;
+
+    /* Espaçamento interno */
+    padding: 20px 6%;
+
+    /* Mantém o cabeçalho acima dos outros elementos */
+    z-index: 10;
+}
+
+
+/* ========================================
+   LOGO VIGIA BRASIL
+======================================== */
+
+.logo h2 {
+    margin: 0;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: #002776;
+}
+
+
+/* ========================================
+   MENU DE NAVEGAÇÃO
+======================================== */
+
+.cabecalho nav {
+    display: flex;
+
+    /* Espaço entre os links */
+    gap: 30px;
+
+    align-items: center;
+}
+
+
+/* Links do menu */
+.cabecalho nav a {
+    color: #002776;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+/* Efeito ao passar o mouse */
+.cabecalho nav a:hover {
+    color: #009739;
+}
+
+/* ========================================
+   HOME - HERO EM DUAS COLUNAS
+======================================== */
+
+/* ========================================
+   HOME - HERO EM DUAS COLUNAS
+======================================== */
+
+.hero-home {
+    display: flex;
+
+    align-items: center;
+
+    gap: 50px;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 100px auto 40px;
+
+    padding: 40px;
+}
+
+
+/* ========================================
+   LADO ESQUERDO DO HERO
+======================================== */
+
+.hero-texto {
+    /* Faz este lado ocupar metade
+       do espaço disponível */
+    flex: 1;
+}
+
+
+/* Título principal da Home */
+.hero-texto h1 {
+    font-size: 3rem;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+
+/* Subtítulo */
+.subtitulo {
+    font-size: 1.3rem;
+
+    margin-bottom: 15px;
+
+    color: #002776;
+}
+
+
+/* Texto explicativo */
+.descricao {
+    font-size: 1rem;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   LADO DIREITO DO HERO
+======================================== */
+
+.hero-imagem {
+    /* Ocupa a outra metade */
+    flex: 1;
+
+    /* Centraliza o card */
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   CARD VIGIA BRASIL
+======================================== */
+
+.card-mapa {
+    width: 100%;
+
+    max-width: 380px;
+
+    padding: 40px 30px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.20);
+
+    backdrop-filter: blur(10px);
+
+    -webkit-backdrop-filter: blur(10px);
+}
+
+
+/* Título do card */
+.card-mapa h3 {
+    font-size: 1.8rem;
+
+    margin-bottom: 15px;
+
+    color: #002776;
+}
+
+
+/* Texto do card */
+.card-mapa p {
+    text-align: center;
+
+    line-height: 1.5;
+
+    margin: 0;
+}
+
+/* ========================================
+   LAYOUT EXCLUSIVO DA HOME
+======================================== */
+
+body.home {
+    /* A Home volta ao fluxo normal:
+       header em cima, main no meio e footer embaixo */
+    display: block;
+
+    /* Mantém a altura mínima da tela */
+    min-height: 100vh;
+
+    /* Permite rolagem vertical normalmente */
+    overflow-x: hidden;
+
+    padding: 0;
+}
+
+
+/* ========================================
+   CONTEÚDO PRINCIPAL DA HOME
+======================================== */
+
+.home main {
+    width: 100%;
+
+    padding-top: 80px;
+}
+
+
+/* ========================================
+   HERO DA HOME
+======================================== */
+
+.home .hero-home {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+    padding: 40px;
+}
+
+
+/* Coluna esquerda */
+.home .hero-texto {
+    flex: 1;
+}
+
+
+/* Coluna direita */
+.home .hero-imagem {
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* ========================================
+   HOME - BENEFÍCIOS
+======================================== */
+
+.home .beneficios {
+    /* Organiza os benefícios em duas colunas */
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin: 20px 0;
+}
+
+
+/* ========================================
+   CARD DE BENEFÍCIO
+======================================== */
+
+.home .card-beneficio {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+}
+
